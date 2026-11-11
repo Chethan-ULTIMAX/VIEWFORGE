@@ -149,3 +149,15 @@ No license has been declared yet. Until a license is added to this repository, d
 ---
 
 **VIEWFORGE** · Computer vision × computational geometry × 3D reconstruction
+
+
+## Tests
+
+Run the automated regression tests from the project root with:
+
+```bash
+python -m pip install pytest
+python -m pytest -q
+```
+
+GitHub Actions runs this test suite on pushes to `main` and pull requests targeting `main`.
