@@ -1,52 +1,46 @@
-\# VIEWFORGE
 
+# VIEWFORGE
 
+**Reconstruct 3D models from 2D views.**
 
-\*\*Transform 2D views into 3D reality.\*\*
+VIEWFORGE is an open-source project that transforms six orthographic images of an object into a 3D model using computer vision and mathematical geometry — without generative AI.
 
+## How It Works
 
+1. Upload six views: Front, Back, Left, Right, Top and Bottom.
+2. Extract object silhouettes from the images.
+3. Align the views in a shared 3D coordinate system.
+4. Reconstruct the object's volume using Visual Hull and voxel carving.
+5. Generate a 3D mesh using Marching Cubes.
 
-VIEWFORGE is an open-source 2D-to-3D reconstruction project that aims to generate 3D models from six orthographic views using computer vision, mathematical geometry and voxel-based reconstruction.
+## Planned Features
 
+- Six-view image upload and alignment.
+- Automatic silhouette extraction.
+- Voxel-based 3D reconstruction.
+- Interactive 3D model visualization.
+- Cross-section and measurement tools.
+- Export models in GLB, OBJ and STL formats.
 
+## Tech Stack
 
-\### Core Features
+| Component | Technology |
+|---|---|
+| Backend | Python, FastAPI |
+| Computer Vision | OpenCV |
+| Computation | NumPy |
+| Reconstruction | scikit-image |
+| 3D Mesh | Trimesh |
+| Visualization | Three.js |
 
-\- Six-view image input.
+## Project Goal
 
-\- Silhouette extraction using OpenCV.
+Build a completely AI-free, mathematical 2D-to-3D reconstruction system that makes 3D model generation accessible through simple images.
 
-\- 3D reconstruction using Visual Hull.
+## Status
 
-\- Voxel carving and Marching Cubes.
+**Under Development** 🚧
 
-\- Interactive 3D visualization using Three.js.
+---
 
-\- 3D model export (GLB, OBJ, STL).
-
-
-
-\### Tech Stack
-
-\- Python
-
-\- OpenCV \& NumPy
-
-\- scikit-image
-
-\- Trimesh
-
-\- FastAPI
-
-\- Three.js
-
-
-
-\### Goal
-
-Build an interactive, completely AI-free 2D-to-3D reconstruction platform.
-
-
-
-\*Currently under development.\*
-
+*VIEWFORGE — From six perspectives to one 3D reality.*
