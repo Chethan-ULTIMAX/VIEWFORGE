@@ -1,75 +1,52 @@
-# VIEWFORGE
+\# VIEWFORGE
 
-**Six orthographic views in. One approximate 3D model out.**
 
-VIEWFORGE is an AI-free 2D-to-3D reconstruction experiment. It uses OpenCV to extract silhouettes, mathematical visual-hull carving to estimate the object's volume, and Marching Cubes to create a mesh.
 
-## What it does
+\*\*Transform 2D views into 3D reality.\*\*
 
-1. Accepts front, back, left, right, top and bottom images.
-2. Extracts a foreground silhouette from each image.
-3. Estimates the object's relative width, depth and height from the six silhouettes.
-4. Intersects the six silhouette volumes on a voxel grid.
-5. Generates a mesh and displays it in an interactive Three.js viewer.
-6. Exports the result as GLB, OBJ or STL.
 
-## Run locally
 
-Python 3.10 or newer is recommended.
+VIEWFORGE is an open-source 2D-to-3D reconstruction project that aims to generate 3D models from six orthographic views using computer vision, mathematical geometry and voxel-based reconstruction.
 
-```bash
-python -m venv .venv
-```
 
-**Windows PowerShell:**
 
-```powershell
-.venv\Scripts\Activate.ps1
-```
+\### Core Features
 
-**Windows Command Prompt:**
+\- Six-view image input.
 
-```cmd
-.venv\Scripts\activate
-```
+\- Silhouette extraction using OpenCV.
 
-Install dependencies and start the server:
+\- 3D reconstruction using Visual Hull.
 
-```bash
-python -m pip install -r requirements.txt
-python -m uvicorn main:app --reload
-```
+\- Voxel carving and Marching Cubes.
 
-Open **http://127.0.0.1:8000** in your browser. The interactive viewer loads Three.js from jsDelivr, so an internet connection is required for the 3D viewer library.
+\- Interactive 3D visualization using Three.js.
 
-## Input image guidelines
+\- 3D model export (GLB, OBJ, STL).
 
-For the best first results:
 
-- Use six **orthographic** views of the same object, not perspective photographs.
-- Keep the object centred and show its complete outline in every view.
-- Use a plain, contrasting background or a transparent PNG.
-- Use a solid silhouette where possible; avoid shadows, labels, borders and other objects.
-- Keep the view directions consistent: front/back, left/right, top/bottom.
 
-Use **Load demo object** in the interface to test the complete pipeline with six generated ellipse silhouettes before preparing your own images.
+\### Tech Stack
 
-## Important limitation
+\- Python
 
-VIEWFORGE currently creates a **visual hull**. A visual hull is the outer volume consistent with the supplied silhouettes. It cannot recover hidden concavities, internal geometry, fine surface details, materials or textures that are not visible in the six outlines. Results are approximate and depend on clean, correctly oriented orthographic silhouettes. It is not a general-purpose converter for arbitrary six photographs or engineering drawings.
+\- OpenCV \& NumPy
 
-## Technology
+\- scikit-image
 
-- Python, FastAPI and Uvicorn
-- OpenCV and NumPy
-- scikit-image (Marching Cubes)
-- Trimesh
-- Three.js
+\- Trimesh
 
-## Project status
+\- FastAPI
 
-**Early prototype — under development.**
+\- Three.js
 
----
 
-*VIEWFORGE — From six perspectives to one 3D reality.*
+
+\### Goal
+
+Build an interactive, completely AI-free 2D-to-3D reconstruction platform.
+
+
+
+\*Currently under development.\*
+
