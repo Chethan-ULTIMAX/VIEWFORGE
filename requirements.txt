@@ -6,3 +6,4 @@ numpy>=1.26
 opencv-python-headless>=4.9
 trimesh>=4.0
 scipy>=1.11
+networkx>=3.2
