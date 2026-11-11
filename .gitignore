@@ -1,8 +1,26 @@
-@"
+# Python
 .venv/
+venv/
 __pycache__/
 *.py[cod]
+*$py.class
+
+# Test and tooling caches
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors
 .vscode/
 .idea/
-"@ | Set-Content .gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated model exports
+*.glb
+*.obj
+*.stl
