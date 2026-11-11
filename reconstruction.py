@@ -319,8 +319,11 @@ def _voxel_surface_mesh(
             vertices = quads.reshape(-1, 3)
 
             face_count = len(indices)
+            # One quad has four vertices. Build all four indices per face;
+            # a (face_count, 1) array cannot be indexed at columns 1, 2 or 3.
             base = (
                 np.arange(face_count, dtype=np.int64)[:, None] * 4
+                + np.arange(4, dtype=np.int64)[None, :]
                 + vertex_offset
             )
 
